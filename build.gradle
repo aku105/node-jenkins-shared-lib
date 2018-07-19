@@ -1,0 +1,32 @@
+apply plugin: 'groovy'
+
+group = 'com.github.jenkins.lib'
+version = '1.0-SNAPSHOT'
+
+description = """Groovy SharedLibrary for Node/NPM"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ['src']
+        }
+    }
+
+    test {
+        groovy {
+            srcDirs = ['test']
+        }
+    }
+}
+
+repositories {        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.10'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.10'
+    testCompile group: 'org.spockframework', name: 'spock-core', version:'1.1-groovy-2.4-rc-3'
+}
